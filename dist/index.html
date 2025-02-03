@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/dist/css/style.css" />
+    <link rel="icon" href="/dist/images/logo.svg">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <title>RAFCART</title>
+  </head>
+  <body>
+    <header>
+      <nav
+        class="py-6 container mx-auto flex flex-col md:flex-row items-center justify-between"
+      >
+        <div class="mb-4">
+          <a href="#">
+            <img src="/dist/images/logo.svg" class="w-32" />
+          </a>
+        </div>
+        <div class="w-full items-center max-w-xl relative mb-4 md:mb-0">
+          <span class="absolute left-3 text-lg text-gray-300">
+            <i class="fas fa-search"></i>
+          </span>
+          <input
+            class="border border-r-0 pl-10 border-s-red-100 hover:border-red-100 focus:border-red-100 w-full"
+            type="text"
+            placeholder="Search"
+          />
+          <button class="bg-red-400 px-8 absolute right-0 top-0 bottom-0">
+            Search
+          </button>
+        </div>
+        <div class="flex gap-5">
+          <div>
+            <i class="fa-regular fa-heart"></i>
+          </div>
+          <div>
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <div>
+            <i class="fa-solid fa-user"></i>
+          </div>
+        </div>
+      </nav>
+            <div class="bg-gray-700">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-5 text-white text-lg py-4">
+          <!-- Left side with categories and navigation links -->
+          <div class="flex justify-between w-full md:w-auto">
+            
+            <button id="menu-toggle" class="md:hidden text-white">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+          <div id="menu" class="hidden md:flex flex-col md:flex-row gap-5 w-full md:w-auto">
+            <div class="flex items-center gap-1">
+              <button>Home</button>
+              <i class="fa-solid fa-caret-down"></i>
+            </div>
+            <div class="flex items-center gap-1">
+              <button>Shop</button>
+              <i class="fa-solid fa-caret-down"></i>
+            </div>
+            <div class="flex items-center gap-1">
+              <button>Pages</button>
+              <i class="fa-solid fa-caret-down"></i>
+            </div>
+          </div>
+          <!-- Right side with call information -->
+          <div class="flex items-center gap-2 mt-4 md:mt-0">
+            <i class="fa-solid fa-phone"></i>
+            <button>Call: +91-8271723021</button>
+          </div>
+        </div>
+      </div>
+      
+      <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+          var menu = document.getElementById('menu');
+          menu.classList.toggle('hidden');
+        });
+      </script>
+      <!-- carousel starts here -->
+            <div class="h-[400px] w-full flex relative hidden sm:flex">
+        <div class="p-4 flex items-center absolute left-0 top-1/2 transform -translate-y-1/2 z-10">
+          <button class="p-4 bg-gray-300 rounded-full hover:bg-gray-400 transition-all" id="left">
+            &lt;
+          </button>
+        </div>
+        <div class="w-full h-[400px]">
+          <img class="h-[400px] w-full object-cover rounded shadow-lg" alt="image" id="carousel-image" />
+        </div>
+        <div class="p-4 flex items-center absolute right-0 top-1/2 transform -translate-y-1/2 z-10">
+          <button class="p-4 bg-gray-300 rounded-full hover:bg-gray-400 transition-all" id="right">
+            &gt;
+          </button>
+        </div>
+      </div>
+      <!-- carousel ends here -->
+    </header>
+
+    <div>
+      <div class="mt-10 flex flex-col md:flex-row gap-10 justify-center">
+        <div
+          class="border-2 border-red-500 h-[100px] w-full md:w-[310px] flex gap-5 pl-11 pt-5"
+        >
+          <div>
+            <i class="fa-solid fa-truck-fast"></i>
+          </div>
+          <div>
+            <p class="font-bold">Free Shipping</p>
+            <p class="font-light">Order above $500</p>
+          </div>
+        </div>
+        <div
+          class="border-2 border-red-500 h-[100px] w-full md:w-[310px] flex gap-5 pl-11 pt-5"
+        >
+          <div>
+            <i class="fa-solid fa-clock"></i>
+          </div>
+          <div>
+            <p class="font-bold">24/7 Support</p>
+            <p class="font-light">Customer Support</p>
+          </div>
+        </div>
+        <div
+          class="border-2 border-red-500 h-[100px] w-full md:w-[310px] flex gap-5 pl-11 pt-5"
+        >
+          <div>
+            <i class="fa-solid fa-money-bill-transfer"></i>
+          </div>
+          <div>
+            <p class="font-bold">Money Refund</p>
+            <p class="font-light">30 days money return</p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-10 flex flex-col md:flex-row gap-10 justify-center w-full">
+        <div
+          class="border-2 border-pink-300 h-[200px] w-full md:w-[500px] flex gap-5 pl-11 pt-5 bg-pink-300 relative rounded-lg"
+        >
+          <div>
+            <img
+              src="https://themes.programmingkit.xyz/rafcart/assets/images/sofa-1.png"
+              class="right-0 absolute w-[200px]"
+            />
+          </div>
+          <div class="flex-col absolute left-8">
+            <p class="text-pink-800 font-bold">30% Offer</p>
+            <p class="font-bold">Free Shipping</p>
+            <p class="font-light">Attractive Natural Furniture</p>
+            <button
+              class="my-6 rounded-lg px-4 py-2 text-center bg-red-500 text-white"
+            >
+              Shop Now
+            </button>
+          </div>
+        </div>
+        <div
+          class="border-2 border-blue-300 h-[200px] w-full md:w-[500px] flex gap-5 pl-11 pt-5 bg-blue-300 relative rounded-lg"
+        >
+          <div>
+            <img
+              src="https://themes.programmingkit.xyz/rafcart/assets/images/sofa-2.png"
+              class="right-5 absolute w-[250px]"
+            />
+          </div>
+          <div class="flex-col absolute left-8">
+            <p class="text-pink-800 font-bold">50% Offer</p>
+            <p class="font-bold">Flash Sale</p>
+            <p class="font-light">Attractive Natural Furniture</p>
+            <button
+              class="my-6 rounded-lg px-4 py-2 text-center bg-red-500 text-white"
+            >
+              Shop Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h1
+      class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6 mt-6 sm:mb-10 sm:mt-10 text-center"
+    >
+      SHOP BY CATEGORY
+    </h1>
+
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <!-- Category Card -->
+        <div
+          class="relative group h-[250px] overflow-hidden rounded-lg cursor-pointer"
+        >
+          <img
+            src="https://themes.programmingkit.xyz/rafcart/assets/images/category-1.jpg"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center"
+          >
+            <p class="text-white text-xl font-bold flex items-center gap-2">
+              Bedroom
+              <span
+                class="text-3xl font-extrabold opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                >&rarr;</span
+              >
+            </p>
+          </div>
+        </div>
+
+        <!-- Repeat for other categories -->
+        <div
+          class="relative group h-[250px] overflow-hidden rounded-lg cursor-pointer"
+        >
+          <img
+            src="https://themes.programmingkit.xyz/rafcart/assets/images/category-2.jpg"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center"
+          >
+            <p class="text-white text-xl font-bold flex items-center gap-2">
+              Mattresses
+              <span
+                class="text-3xl font-extrabold opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                >&rarr;</span
+              >
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="relative group h-[250px] overflow-hidden rounded-lg cursor-pointer"
+        >
+          <img
+            src="https://themes.programmingkit.xyz/rafcart/assets/images/category-3.jpg"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center"
+          >
+            <p class="text-white text-xl font-bold flex items-center gap-2">
+              Office
+              <span
+                class="text-3xl font-extrabold opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                >&rarr;</span
+              >
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="relative group h-[250px] overflow-hidden rounded-lg cursor-pointer"
+        >
+          <img
+            src="https://themes.programmingkit.xyz/rafcart/assets/images/category-4.jpg"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center"
+          >
+            <p class="text-white text-xl font-bold flex items-center gap-2">
+              Outdoor
+              <span
+                class="text-3xl font-extrabold opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                >&rarr;</span
+              >
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="relative group h-[250px] overflow-hidden rounded-lg cursor-pointer"
+        >
+          <img
+            src="https://themes.programmingkit.xyz/rafcart/assets/images/category-5.jpg"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center"
+          >
+            <p class="text-white text-xl font-bold flex items-center gap-2">
+              Lounges & Sofas
+              <span
+                class="text-3xl font-extrabold opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                >&rarr;</span
+              >
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="relative group h-[250px] overflow-hidden rounded-lg cursor-pointer"
+        >
+          <img
+            src="https://themes.programmingkit.xyz/rafcart/assets/images/category-6.jpg"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center"
+          >
+            <p class="text-white text-xl font-bold flex items-center gap-2">
+              Living & Dining
+              <span
+                class="text-3xl font-extrabold opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                >&rarr;</span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h1
+      class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6 mt-6 sm:mb-10 sm:mt-10 flex justify-center text-center"
+    >
+      TOP NEW ARRIVAL
+    </h1>
+
+    <div class="container mx-auto px-4">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+      >
+        <!-- Product Card 1 -->
+        <div class="border p-4 bg-white rounded-lg shadow-lg relative">
+          <span
+            class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 text-sm rounded"
+            >25%</span
+          >
+          <img
+            src="https://themes.programmingkit.xyz/rafcart/assets/images/product9.jpg"
+            class="w-full h-40 object-cover rounded"
+          />
+          <h2 class="font-bold mt-3">GUYER CHAIR</h2>
+          <p class="text-gray-500">Queen Headboard</p>
+          <p class="text-red-500 font-bold text-lg">$45.00</p>
+          <div class="flex items-center">
+            ⭐⭐⭐⭐⭐ <span class="text-gray-500 ml-1">(150)</span>
+          </div>
+          <button class="bg-red-500 text-white w-full py-2 mt-3 rounded">
+            ADD TO CART
+          </button>
+        </div>
+
+        <!-- Product Card 2 -->
+        <div class="border p-4 bg-white rounded-lg shadow-lg relative">
+          <img
+            src="https://themes.programmingkit.xyz/rafcart/assets/images/product1.jpg"
+            class="w-full h-40 object-cover rounded"
+          />
+          <h2 class="font-bold mt-3">MADELINE SOFA</h2>
+          <p class="text-gray-500">Fabric Sofa Bed</p>
+          <p class="text-red-500 font-bold text-lg">$120.00</p>
+          <div class="flex items-center">
+            ⭐⭐⭐⭐⭐ <span class="text-gray-500 ml-1">(150)</span>
+          </div>
+          <button class="bg-red-500 text-white w-full py-2 mt-3 rounded">
+            ADD TO CART
+          </button>
+        </div>
+
+        <!-- Product Card 3 -->
+        <div class="border p-4 bg-white rounded-lg shadow-lg relative">
+          <span
+            class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 text-sm rounded"
+            >HOT</span
+          >
+          <img
+            src="https://themes.programmingkit.xyz/rafcart/assets/images/product8.jpg"
+            class="w-full h-40 object-cover rounded"
+          />
+          <h2 class="font-bold mt-3">BIANCO CHAIR</h2>
+          <p class="text-gray-500">Fabric Accent Chair</p>
+          <p class="text-red-500 font-bold text-lg">$45.00</p>
+          <div class="flex items-center">
+            ⭐⭐⭐⭐⭐ <span class="text-gray-500 ml-1">(150)</span>
+          </div>
+          <button class="bg-red-500 text-white w-full py-2 mt-3 rounded">
+            ADD TO CART
+          </button>
+        </div>
+
+        <!-- Product Card 4 -->
+        <div class="border p-4 bg-white rounded-lg shadow-lg relative">
+          <img
+            src="https://themes.programmingkit.xyz/rafcart/assets/images/product10.jpg"
+            class="w-full h-40 object-cover rounded"
+          />
+          <h2 class="font-bold mt-3">PELAGIA LOUNGE</h2>
+          <p class="text-gray-500">Outdoor Modular</p>
+          <p class="text-red-500 font-bold text-lg">$45.00</p>
+          <div class="flex items-center">
+            ⭐⭐⭐⭐⭐ <span class="text-gray-500 ml-1">(150)</span>
+          </div>
+          <button class="bg-red-500 text-white w-full py-2 mt-3 rounded">
+            ADD TO CART
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-10 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-full mx-auto">
+        <img
+          src="https://themes.programmingkit.xyz/rafcart/assets/images/offer-2.jpg"
+          class="cursor-pointer w-full h-auto"
+        />
+      </div>
+    </div>
+
+    <h1
+      class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6 mt-6 sm:mb-10 sm:mt-10 flex justify-center text-center"
+    >
+      RECOMMENDED FOR YOU
+    </h1>
+    <div class="container mx-auto px-4">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+      >
+        <!-- Product Card 1 -->
+        <div class="border p-4 bg-white rounded-lg shadow-lg relative">
+          <img
+            src="https://themes.programmingkit.xyz/rafcart/assets/images/product2.jpg"
+            class="w-full h-40 object-cover rounded"
+          />
+          <h2 class="font-bold mt-3">PELAGIA LOUNGE</h2>
+          <p class="text-gray-500">Outdoor Modular Lounge</p>
+          <p class="text-red-500 font-bold text-lg">$449.00</p>
+          <div class="flex items-center">
+            ⭐⭐⭐⭐⭐ <span class="text-gray-500 ml-1">(150)</span>
+          </div>
+          <button class="bg-red-500 text-white w-full py-2 mt-3 rounded">
+            ADD TO CART
+          </button>
+        </div>
+
+        <!-- Product Card 2 -->
+        <div class="border p-4 bg-white rounded-lg shadow-lg relative">
+          <img
+            src="https://themes.programmingkit.xyz/rafcart/assets/images/product3.jpg"
+            class="w-full h-40 object-cover rounded"
+          />
+          <h2 class="font-bold mt-3">AVERY BED</h2>
+          <p class="text-gray-500">Queen Bed</p>
+          <p class="text-red-500 font-bold text-lg">$549.00</p>
+          <div class="flex items-center">
+            ⭐⭐⭐⭐⭐ <span class="text-gray-500 ml-1">(150)</span>
+          </div>
+          <button class="bg-red-500 text-white w-full py-2 mt-3 rounded">
+            ADD TO CART
+          </button>
+        </div>
+
+        <!-- Product Card 3 -->
+        <div class="border p-4 bg-white rounded-lg shadow-lg relative">
+          <img
+            src="https://themes.programmingkit.xyz/rafcart/assets/images/product4.jpg"
+            class="w-full h-40 object-cover rounded"
+          />
+          <h2 class="font-bold mt-3">WHITE BED</h2>
+          <p class="text-gray-500">King Bed</p>
+          <p class="text-red-500 font-bold text-lg">$549.00</p>
+          <div class="flex items-center">
+            ⭐⭐⭐⭐⭐ <span class="text-gray-500 ml-1">(150)</span>
+          </div>
+          <button class="bg-red-500 text-white w-full py-2 mt-3 rounded">
+            ADD TO CART
+          </button>
+        </div>
+
+        <!-- Product Card 4 -->
+        <div class="border p-4 bg-white rounded-lg shadow-lg relative">
+          <img
+            src="https://themes.programmingkit.xyz/rafcart/assets/images/product9.jpg"
+            class="w-full h-40 object-cover rounded"
+          />
+          <h2 class="font-bold mt-3">GUYER CHAIR</h2>
+          <p class="text-gray-500">Queen Headboard</p>
+          <p class="text-red-500 font-bold text-lg">$45.00</p>
+          <div class="flex items-center">
+            ⭐⭐⭐⭐⭐ <span class="text-gray-500 ml-1">(150)</span>
+          </div>
+          <button class="bg-red-500 text-white w-full py-2 mt-3 rounded">
+            ADD TO CART
+          </button>
+        </div>
+
+        <!-- Product Card 5 -->
+        <div class="border p-4 bg-white rounded-lg shadow-lg relative">
+          <img
+            src="https://themes.programmingkit.xyz/rafcart/assets/images/product1.jpg"
+            class="w-full h-40 object-cover rounded"
+          />
+          <h2 class="font-bold mt-3">MADELINE SOFA</h2>
+          <p class="text-gray-500">Fabric Sofa Bed</p>
+          <p class="text-red-500 font-bold text-lg">$120.00</p>
+          <div class="flex items-center">
+            ⭐⭐⭐⭐⭐ <span class="text-gray-500 ml-1">(150)</span>
+          </div>
+          <button class="bg-red-500 text-white w-full py-2 mt-3 rounded">
+            ADD TO CART
+          </button>
+        </div>
+
+        <!-- Product Card 6 -->
+        <div class="border p-4 bg-white rounded-lg shadow-lg relative">
+          <img
+            src="https://themes.programmingkit.xyz/rafcart/assets/images/product8.jpg"
+            class="w-full h-40 object-cover rounded"
+          />
+          <h2 class="font-bold mt-3">BIANCO CHAIR</h2>
+          <p class="text-gray-500">Fabric Accent Chair</p>
+          <p class="text-red-500 font-bold text-lg">$45.00</p>
+          <div class="flex items-center">
+            ⭐⭐⭐⭐⭐ <span class="text-gray-500 ml-1">(150)</span>
+          </div>
+          <button class="bg-red-500 text-white w-full py-2 mt-3 rounded">
+            ADD TO CART
+          </button>
+        </div>
+
+        <!-- Product Card 7 -->
+        <div class="border p-4 bg-white rounded-lg shadow-lg relative">
+          <img
+            src="https://themes.programmingkit.xyz/rafcart/assets/images/product10.jpg"
+            class="w-full h-40 object-cover rounded"
+          />
+          <h2 class="font-bold mt-3">PELAGIA LOUNGE</h2>
+          <p class="text-gray-500">Outdoor Modular Lounge</p>
+          <p class="text-red-500 font-bold text-lg">$45.00</p>
+          <div class="flex items-center">
+            ⭐⭐⭐⭐⭐ <span class="text-gray-500 ml-1">(150)</span>
+          </div>
+          <button class="bg-red-500 text-white w-full py-2 mt-3 rounded">
+            ADD TO CART
+          </button>
+        </div>
+
+        <!-- Product Card 8 -->
+        <div class="border p-4 bg-white rounded-lg shadow-lg relative">
+          <img
+            src="https://themes.programmingkit.xyz/rafcart/assets/images/product12.jpg"
+            class="w-full h-40 object-cover rounded"
+          />
+          <h2 class="font-bold mt-3">BLACK ARCHIE</h2>
+          <p class="text-gray-500">Black Bedside</p>
+          <p class="text-red-500 font-bold text-lg">$400.00</p>
+          <div class="flex items-center">
+            ⭐⭐⭐⭐⭐ <span class="text-gray-500 ml-1">(150)</span>
+          </div>
+          <button class="bg-red-500 text-white w-full py-2 mt-3 rounded">
+            ADD TO CART
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-white py-10 border-t border-gray-200">
+      <div
+        class="container mx-auto px-4 md:px-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+      >
+        <!-- Logo & Newsletter -->
+        <div>
+          <h2 class="text-2xl font-bold">
+            <span class="text-red-500">RAF</span>CART
+          </h2>
+          <p class="text-gray-600 mt-4">
+            Lorem ipsum, or lipsum as it is sometimes known, is dummy text used
+            in laying out print, graphic or web designs.
+          </p>
+          <h3 class="font-bold mt-5">NEWSLETTER</h3>
+          <div class="flex mt-2">
+            <input
+              type="email"
+              placeholder="Your email address"
+              class="border border-gray-300 rounded-l-md px-3 py-2 w-full outline-none"
+            />
+            <button
+              class="bg-red-500 text-white px-4 py-2 rounded-r-md font-bold"
+            >
+              SUBSCRIBE
+            </button>
+          </div>
+        </div>
+
+        <!-- My Account -->
+        <div>
+          <h3 class="font-bold mb-3">MY ACCOUNT</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li><a href="#" class="hover:text-red-500">Orders</a></li>
+            <li><a href="#" class="hover:text-red-500">Wishlist</a></li>
+            <li><a href="#" class="hover:text-red-500">Track Order</a></li>
+            <li><a href="#" class="hover:text-red-500">Manage Account</a></li>
+            <li><a href="#" class="hover:text-red-500">Return Order</a></li>
+          </ul>
+        </div>
+
+        <!-- Information -->
+        <div>
+          <h3 class="font-bold mb-3">INFORMATION</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li><a href="#" class="hover:text-red-500">About Us</a></li>
+            <li><a href="#" class="hover:text-red-500">Return Policy</a></li>
+            <li>
+              <a href="#" class="hover:text-red-500">Terms & Conditions</a>
+            </li>
+            <li><a href="#" class="hover:text-red-500">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-red-500">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h3 class="font-bold mb-3">CONTACT</h3>
+          <p class="text-gray-600 flex items-start">📍 Chitkara University</p>
+          <p class="text-gray-600 flex items-center mt-2">📞 +91-8271723021</p>
+          <p class="text-gray-600 flex items-center mt-2">
+            ✉️ rohankumar2663@gmail.com
+          </p>
+
+          <!-- Social Icons -->
+          <div class="flex gap-3 mt-4">
+            <a
+              href="#"
+              class="w-8 h-8 flex items-center justify-center bg-blue-800 text-white rounded-full"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="#"
+              class="w-8 h-8 flex items-center justify-center bg-blue-400 text-white rounded-full"
+            >
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a
+              href="#"
+              class="w-8 h-8 flex items-center justify-center bg-pink-500 text-white rounded-full"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <footer class="m-4 md:m-10">
+      <h1
+        class="bg-gray-700 text-white flex justify-center p-4 md:p-6 text-center"
+      >
+        &copy; RAFCART - All Rights Reserved
+      </h1>
+    </footer>
+
+    <!-- carousel js code starts here -->
+    <script>
+      const images = [
+        "https://shoplane-by-lassie.netlify.app/img/img4.png",
+        "https://shoplane-by-lassie.netlify.app/img/img3.png",
+        "https://shoplane-by-lassie.netlify.app/img/img2.png",
+      ];
+      let currentIndex = 0;
+      const carouselImage = document.getElementById("carousel-image");
+      const leftButton = document.getElementById("left");
+      const rightButton = document.getElementById("right");
+      function displayImage() {
+        carouselImage.src = images[currentIndex];
+      }
+      leftButton.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        displayImage();
+      });
+      rightButton.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        displayImage();
+      });
+      displayImage();
+    </script>
+    <!-- carousel js code ends here -->
+  </body>
+</html>
